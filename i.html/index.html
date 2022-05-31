@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+    <style>
+       #mobile{
+            display: none;
+            align-items: center;
+        }
+        button.normal{
+            font-size: 22px;
+            font-weight: 600;
+            padding: 15px 30px;
+            color:black;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;outline: none;
+            transition: 0.2s;
+            font-weight: bold;
+            margin:15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+        }
+                   
+        #header{
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            padding: 40px 80px;
+            background: rgba(185, 183, 183, 0.527);
+            backface-visibility: visible;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.6);
+            width:98%;
+            position: sticky;
+            top:0;
+            left: 0;
+            z-index: 999;
+        }
+        .logo{
+            width:200px;
+        }
+        #navbar{
+          
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 100px;
+            transition: 0.3s;
+            
+
+
+            
+        }
+        #navbar.active{
+            right:0px;
+        }
+        #navbar li{
+            list-style: none;
+            padding: 0 22px;
+            position: relative;
+        }
+        #navbar li a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(3, 3, 27);
+            transition: 0.3s;
+        }
+        
+        #navbar li a:hover::after{
+            content:"";
+            width:30%;
+            height:3px;
+            background: rgb(61, 124, 37);
+            position:absolute;
+            bottom:-4px;
+            left:20px;
+
+        }
+        #hero{
+            z-index: -1;
+            
+            background-image:url("hero4.png");
+            height:90vh;
+            width:96%;
+            background-size: cover;
+            background-position: top 20% right 0;
+            padding-left: 200px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #hero h4{
+            padding-top:200px;
+            font-size: 40px;
+        }
+        #hero h2{
+            font-size: 45px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #hero h1{
+            font-size: 60px;
+        }
+        #re{
+            color: rgb(61, 124, 37);
+        }
+       #hero p{
+            font-size: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+       
+        #hero button{
+            align-items: center;
+            left:40%;
+            justify-content: center;
+            padding-left: 800px;
+            font-size: 26px;
+            height:40px;
+            font-weight: bold;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-image: url("button.png");
+            background-color: transparent;
+            color:rgb(61, 124, 37);
+            border:0;
+            cursor: pointer;
+            padding:10px 80px 20px 55px;
+            background-repeat: no-repeat;
+
+        }
+
+        .secp{
+            padding:40px 80px;
+        }
+        h6{
+            font-weight: 1200;
+            font-size: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #feature{
+            padding-top: 180px;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .febox{
+            width:180px;
+            text-align: center;
+            padding: 10px 15px;
+            box-shadow: 20px 20px 34px rgba(0,0,0,0.6);
+            border: 1px solid black;
+            
+        }
+        .febox:hover{
+            box-shadow: 20px 20px 54px rgba(70, 62, 221, 0.1);
+        }
+        .febox img{
+            width:100%;
+            margin-bottom: 10px;
+        }
+        .febox h6{
+            display:inline-block;
+            line-height: 1;
+            padding:9px 8px 6px 4px;
+            border-radius: 4px;
+            background-color: #fddde4;
+            color:rgba(27, 75, 9, 0.918);
+        }
+        .febox:nth-child(2) h6{
+            background-color:aqua;
+        }
+        
+        .febox:nth-child(3) h6{
+            background-color:bisque;
+        }
+        .febox:nth-child(4) h6{
+            background-color:#d3f3bb;
+        }
+        #prr{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        h4{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #product{
+            text-align: center;
+
+        }
+        .pro{
+            width:23%;
+            padding:10px 12px;
+            border:1px solid #cce7cc;
+            cursor: pointer;
+            box-shadow: 20px 20px 20px rgba(0,0,0,0.02);
+            margin:25px;
+            position: relative;
+        }
+        .pro:hover{
+            box-shadow: 20px 20px 30px rgba(0,0,0,0.6);
+
+
+        }
+        .des{
+            text-align: start;
+        }
+        .pro img{
+            width:100%;
+            border-radius: 20px;
+        }
+        #trr{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(33, 226, 162);
+        }
+        h4{
+           
+            font-size: 30px;
+            font-weight: 700;
+            color:green;
+        }
+        .cart{
+            font-size: 30px;
+            width:80px;
+            height:50px;
+            line-height: 40px;
+            border-radius: 50px;
+            font-weight: 500;
+            background-color: #d3f3bb;
+            position: absolute;
+            bottom: 20px;
+            right:10px;
+            
+        }
+        .procontainer{
+            display: flex;
+            justify-content: space-between;
+            padding-top:10px;
+            flex-wrap: wrap;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        #banner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('banner/b2.jpg');
+            color: white;
+            width:100%;
+            height:30vh;
+            background-size: cover;
+            background-position: center;
+            margin: 10px;
+        }
+        #banner h1{
+            font-size: 35px;
+            font-weight: bold;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #banner span{
+            font-size: 50px;
+            font-weight: bold;
+            color: aqua;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #banner h2,.banner-box h2{
+            font-size: 45px;
+            font-weight: bold;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #banner button:hover{
+            color: black;
+            background-color: chartreuse;
+        }
+        #product h2{
+            font-size: 60px;
+            font-weight: bold;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        #product p{
+            font-size: 30px;
+            font-weight: 100;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        #smban{
+            display: flex;
+            justify-content: space-between;
+            font-size: 30px;
+            padding-right: 50px;
+            width:100%;
+            padding-left: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            flex-wrap: wrap;
+        }
+
+        .banbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-self: start;
+            text-align:left;
+            padding-left: 40px;
+            background-image: url('banner/b17.jpg');
+            color: rgb(246, 248, 244);
+            width:40%;
+            height:40vh;
+            background-size: cover;
+            background-position: center;
+            margin: 20px;
+            padding-left: 45px;
+            
+
+        }
+        .banbox h4{
+            font-size: 45px;
+            color: rgb(253, 253, 255);
+            font-weight: 600;
+
+        }
+        .banbox h4 span{
+            font-size: 40px;
+            color: rgb(253, 253, 255);
+            font-weight: 300;
+        }
+        .banbox button{
+            font-size: 26px;
+            font-weight: 600;
+            width:25%;
+            padding: 11px 18px;
+            color:rgb(248, 244, 244);
+            background-color:transparent;
+            border: 1px solid rgb(252, 250, 250);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: bold;
+            margin:15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;           
+        }
+
+        
+
+        .banbox1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-self: start;
+            text-align:left;
+            padding-left: 40px;
+            background-image: url('banner/b10.jpg');
+            color: rgb(246, 248, 244);
+            width:40%;
+            height:40vh;
+            background-size: cover;
+            background-position: center;
+            margin: 20px;
+            
+
+        }
+        .banbox1 h4{
+            font-size: 45px;
+            color: rgb(253, 253, 255);
+            font-weight: 600;
+
+        }
+        .banbox1 h4 span{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            color: rgb(253, 253, 255);
+            font-weight: 300;
+        }
+        .banbox1 span{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            color: rgb(253, 253, 255);
+            font-weight: 300;
+
+        }
+        .banbox span{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            color: rgb(253, 253, 255);
+            font-weight: 300;
+
+        }
+        .banbox1 button{
+            font-size: 26px;
+            font-weight: 600;
+            width:22%;
+            padding: 11px 18px;
+            color:rgb(248, 244, 244);
+            background-color:transparent;
+            border: 1px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: bold;
+            margin:15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;           
+        }
+        .banbox1 button:hover,.banbox button:hover{
+            background-color:rgb(188, 247, 247);
+            color:rgb(48, 47, 47);
+            border: 0.5px solid rgb(61, 60, 60);
+
+
+        }
+        
+        .banner-box h3{
+            color:rgb(240, 244, 245);
+            font-size: 38px;
+            font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #banner3{
+            display:flex;
+           justify-content: space-between;
+           flex-wrap: wrap;
+           padding: 0 80px;
+        }
+        .banner-box{
+            display: flex;
+            text-align: start;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-image: url("banner/b7.jpg");
+            min-width: 30%;
+            height: 30vh;
+            background-size:cover;
+            background-position: center;
+            padding: 20px;
+            margin-bottom: 20px; 
+            padding-top: 10px;
+            
+        }
+        .banner-box h2{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            color: rgb(253, 255, 254);
+            
+
+        }
+        .banner-box span{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 38px;
+            font-weight: bold;
+            color: rgb(253, 237, 8);
+
+        }
+        .b2{
+            background-image: url("banner/b4.jpg");
+        }
+        .b3{
+            background-image: url("banner/b18.jpg");
+            
+        }
+        #news{
+            padding:50px 40px;
+            margin: 35px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            background-image: url("banner/b14.png");
+            background-repeat: no-repeat;
+            background-position: 20% 30%;
+            background-color: rgb(1, 1, 51);
+        }
+        #news h3{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 45px;
+            font-weight: 800;
+            color:white
+        }
+        #news p{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 35px;
+            font-weight: 500;
+            color:rgb(201, 196, 196)
+
+        }
+        #news p span{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 35px;
+            font-weight: 500;
+            color:rgb(241, 227, 25)
+
+        }
+        #news input{
+            display: flex;
+            align-items: flex-end;
+            height:4.825rem;
+            margin:0px ;
+            width:100%;
+            font-size: 30px;
+            border:2px solid rgb(245, 125, 125);
+            border-radius: 10px;
+            font-weight: bold;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding:0 1.25em;
+            outline:none;
+        }
+        #news button{
+            background-color:#088178;
+            height:4.825rem;
+            color:#fff;
+            width:30%;
+            font-size: 30px;
+            padding-inline: 2px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        .form{
+            display: flex;
+            align-items: baseline;
+            flex-direction: row;
+            width:40%;
+        }
+        footer{
+            margin:20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+        footer h4{
+            font-size: 45px;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+
+        }
+        .col{
+            font-size: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .icons{
+            font-size: 44px;
+            cursor: pointer;
+        }
+        .colinstall{
+            font-size: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #logo{
+            margin-bottom: 30px;
+            width:180px;
+                    } 
+        #fd{
+         border:2px solid green;
+         border-radius: 10px;
+        width:280px;
+        display: flex;
+        display: inline;
+        cursor: pointer;
+         }
+         #fd1{
+             width:400px;
+             height:60px;
+         }
+         footer a{
+             text-decoration: none;
+             font-size: 28px;
+             font-weight: 400;
+             color: #050353;
+             margin-bottom: 10px;
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+         }
+        footer a:hover{
+            color:#088178;
+        }
+    .copy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: 900;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    }
+    .copy span{
+        color:#39f50a
+    }
+    .row img{
+        margin:1px solid green;
+    }
+
+     @media(max-width:799px){
+        #navbar{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: fixed;
+            top:0;
+            right:-300px;
+            height: 100vh;
+            width: 300px;
+            background-color: #e3e6F3;
+            box-shadow: 0 40px 60px rgb(0,0,0,0.1);   
+            padding: 80px 0 0 10px;  
+            transition: 0.3s;       
+        }
+        #navbar li{
+            margin-bottom: 25px;
+        }
+        #mobile{
+            display: flex;
+            align-items: center;
+        }
+        #mobile i{
+           color:#1a1a1a;
+           font-size: 24px;
+           padding-left: 20px;
+        }
+        #lgbag{
+            display:none;
+        }
+        #close{
+            display: initial;
+            color:black;
+            font-size: 30px;
+            top:30px;
+            left:30px;
+        }
+        #hero{
+            height:70vh;
+            padding: 0 80px;
+            background-position: top 30% right 30%;
+        }
+     }
+
+                    
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="logo.png" class="logo"></a>
+  
+    <div>
+        <ul id="navbar">
+            <a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+            <li><a class="active" href="index.html">HOME</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+    <div id="mobile">
+       <a href="cart.html" id="lgbag"><i class="fa fa-shopping-bag"style='font-size:25px;color:rgb(3,3,27)'></i></a>
+       <i id="bar" class="fa fa-bars" aria-hidden="true"></i>
+
+
+
+    </div>
+    
+</section>
+
+
+<section id="hero">
+    <h4>Trade-in-offer</h4>
+    <h1>Super Value Deals</h1>
+    <h1 id="re"> On All Products</h1>
+    <p>Save more with coupons and 70%off  </p>
+    <button>Shop Now</button>
+</section>
+
+<section id="feature" class="secp">
+    <div class="febox">
+        <img src="features/f1.png">
+        <h6>Free Shipping</h6>
+    </div>
+    <div class="febox">
+        <img src="features/f2.png">
+        <h6>Online Order</h6>
+    </div>
+    <div class="febox">
+        <img src="features/f3.png">
+        <h6>Save Money</h6>
+    </div>
+    <div class="febox">
+        <img src="features/f4.png">
+        <h6>Promotion</h6>
+    </div>
+    <div class="febox">
+        <img src="features/f5.png">
+        <h6>Happy Sell</h6>
+    </div>
+</section>
+
+<section id="product">
+    <h2>Featured Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="procontainer">
+        <div class="pro">
+            <img src="products/f1.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$678</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+
+        <div class="pro">
+            <img src="products/f2.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                   
+                </div>
+                <h4>$199</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+        <div class="pro">
+            <img src="products/f3.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$438</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+        <div class="pro">
+            <img src="products/f4.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$548</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+        <div class="pro">
+            <img src="products/f5.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                </div>
+                <h4>$345</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+     
+        
+        <div class="pro">
+            <img src="products/f6.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                    <i class="fa fa-star-half-o" aria-hidden="true" style='color: #e7cd1f'></i>
+
+                </div>
+                <h4>$148</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="banner" class="secm">
+    <h1>Repair Services</h1>
+    <h2>Up to<span>70% Off </span>--ALL Tshirts and Accessories</h2>
+    <button class="normal">Explore More</button>
+</section>
+
+<section id="product">
+    <h2>New Arrivals</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="procontainer">
+        <div class="pro">
+            <img src="products/n1.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$678</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+
+        <div class="pro">
+            <img src="products/n2.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                   
+                </div>
+                <h4>$199</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+        <div class="pro">
+            <img src="products/n3.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$438</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+        <div class="pro">
+            <img src="products/n4.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$548</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+        <div class="pro">
+            <img src="products/n5.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                </div>
+                <h4>$345</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+     
+        
+        <div class="pro">
+            <img src="products/n6.jpg">
+            <div class="des">
+                <span id="trr" >Adidas</span> 
+                <span id="prr"><br>Cartoon Astranaut Tshirt<br>
+                <div class="star">
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color:#e7cd1f '></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>
+                    <i class='fa fa-star' style='color: #e7cd1f'></i>  
+                </div>
+                <h4>$148</h4></span>               
+
+            </div>
+            <a href="#" id="hrf" ><i class='fa fa-shopping-cart cart'></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="smban">   
+    <div class="banbox">
+        <h4><span>crazy deals</span><br>
+            Buy 1 get 2 free</h4>
+        <span>The best classic sale on Cara</span>
+        <button >Learn More</button>
+    </div>
+    <div class="banbox1">
+        <h4><span>spring/summer</span><br>
+         Upcoming season</h4>
+        <span>The best classic sale on Cara</span>
+        <button >Collection</button>
+    </div>
+</section>
+<section id="banner3">
+    
+    <div class="banner-box b1">
+        <h2> Seasonal Ware <br><span>Winter Collections-50% off</span></h2>
+    </div>
+    <div class="banner-box b2">
+        <h2>New Footwear Collection <br><span>spring/summer-2022</span></h2>
+    </div>
+    <div class="banner-box b3">
+        <h2> T-shirts <br><span>New Trendy Prints</span></h2>
+       
+    </div>
+</section>
+
+<section id="news">
+    <div class="newtext">
+        <h3>Sign Up For Newsletters</h3>
+        <p>Get email update for our new shops and <span>special offers.</span></p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your Email Address">
+        <button class="normal">Sign Up</button>
+    </div>
+</section>
+
+<footer class="f1">
+    <div class="col">
+        <img src="logo.png"id="logo">
+        <h4>Contact</h4>
+        <p><strong>Address :<br></strong>MSR Nagar, MSRIT Post, Bangalore, PIN- 560 054,<br>Karnataka<br>
+            INDIA</p>
+            <p><strong>Phone No:</strong>+7667171183</p>
+            <p><strong>Hours: </strong>10:00AM -11:59PM</p>
+    </div>
+    <div class="follow">
+        <h4>Follow Us</h4>
+    
+    <div class="icons">
+        <i class="fa fa-facebook"  style='color:rgb(8, 8, 88)' ></i>
+        <i class="fa fa-whatsapp"  style='color:rgb(13, 199, 13)'></i>
+        <i class="fa fa-twitter"  style='color:rgb(9, 194, 226)''></i>
+        <i class="fa fa-instagram" style='color:rgb(88, 3, 109)'></i>
+    </div>
+</div>
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Delievery Information</a>
+        <a href="#">Contact Us</a>
+
+
+
+
+    </div>
+    <div class="col">
+        <h4>Sign In</h4>
+        <a href="#">View Cart</a>
+        <a href="#">My WishList</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="colinstall">
+        <h4>Install App</h4>
+        <p>From App store Or Google Play</p>
+        <div class="row">
+            <img src="pay/play.jpg"id="fd">
+            <img src="pay/app.jpg"id="fd">
+            <p>Secured Payment GateAways</p>
+            <img src="pay/pay.png"id="fd1">
+        </div>
+    </div>
+    
+</footer>
+<div class="copy">
+    <p>@2022,MadeBY-<span>Shubham Anand</span>,Ecommerce Template</p>
+</div>
+
+    
+</body>
+<script>
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+    if(bar)
+    {
+        bar.addEventListener('click',() =>{
+            nav.classList.add('active');
+        })
+    }
+    if(close)
+    {
+        close.addEventListener('click',() =>{
+            nav.classList.remove('active');
+        })
+    }
+</script>
+</html>
